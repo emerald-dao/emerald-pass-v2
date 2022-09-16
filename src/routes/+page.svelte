@@ -37,6 +37,7 @@
         </Column>
       </div>
       <Column gap={5} align="flex-start" justify="flex-start">
+        
         <Row gap={1.3} align="flex-start" justify="flex-start">
           <img class="logo" src="/ec-logo.png" alt="emerald city dao">
           <img class="logo" src="/ec-logo.png" alt="emerald city dao">
@@ -45,6 +46,9 @@
           <img class="logo" src="/ec-logo.png" alt="emerald city dao">
           <img class="logo" src="/ec-logo.png" alt="emerald city dao">
         </Row>
+        <span class="red">
+          TODO: THE TOP LOGOS ARE JUST PLACEHOLDER FOR EMERALD'S PROJECTS
+        </span>
         <Column gap={1.2} align="flex-start" justify="flex-start">
           <h3>134 Projects</h3>
           <p>
@@ -176,7 +180,9 @@
 </Section>
 
 <Section paddingTop="large" paddingBottom="large">
-  TODO: EDIT THIS COMPONENT ON THE COMPONENT LIBRARY!!
+  <span class="red">
+    TODO: EDIT THIS COMPONENT ON THE COMPONENT LIBRARY!!
+  </span>
   <DiscordInvite/>
 </Section>
 
@@ -275,5 +281,9 @@
 
   :root {
     --bones-section-padding-m: 8rem;
+  }
+  
+  .red {
+    color: red;
   }
 </style>
