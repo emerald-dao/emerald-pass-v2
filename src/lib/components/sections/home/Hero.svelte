@@ -3,8 +3,8 @@
   import { Gradient, GradientWrapper } from '$lib/components/gradients'
 </script>
 
-<Section paddingBottom="large" paddingTop="small">
-  <div style="position: relative;">
+<div style="position: relative;">
+  <Section paddingBottom="large" paddingTop="small">
     <Container width="small">
       <Column>
         <h1><span>Emerald's City DAO</span><br/>Emerald Pass</h1>
@@ -18,9 +18,8 @@
         <Gradient left="50%" top="60%" blur="200px" width="400px" height="400px"/>
       </GradientWrapper>
     </Container>
-  </div>
-</Section>
-
+  </Section>
+</div>
 
 <style type="scss">
   h1 {
