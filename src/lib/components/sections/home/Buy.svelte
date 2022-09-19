@@ -12,7 +12,7 @@
     <Container width="small">
       <Column>
         <h2>Get Your Pass Now</h2>
-        {#if $user.loggedIn}
+        {#if $user?.loggedIn}
           <div class="countdown-container">
             {#await timeOnEmeraldPass($user.addr) then endingTime}
               <p>You have</p>
