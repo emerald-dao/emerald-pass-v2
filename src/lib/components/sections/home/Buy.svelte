@@ -2,6 +2,7 @@
   import { Section, Container, Column, Row } from "@mateoroldos/svelte.bones";
 	import { Button } from "@emerald-dao/component-library";
   import purchasePlans from "$lib/config/purchase";
+  import { purchaseEmeraldPass, timeOnEmeraldPass } from "$flow/actions.js";
 </script>
 
 <Section paddingTop="large" paddingBottom="large">
@@ -13,17 +14,17 @@
           <div class="buy-card">
             <Column gap="small">
               <h3>{plan.name}</h3>
-              <span>{plan.price}</span>
+              <span>{`${plan.price} $FUSD`}</span>
               <p>
                 {plan.description}
               </p>
               <Button
-                href="/buy"
                 prefetch={true}
                 color="neutral"
                 size="full-width"
                 --clr-neutral-800=var(--clr-neutral-100)
                 --clr-font-text-inverse=var(--clr-font-text)
+                on:click={() => purchaseEmeraldPass(plan.subscriptionTime, plan.price)}
               >
                 Buy Pass
               </Button>

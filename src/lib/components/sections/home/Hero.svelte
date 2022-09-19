@@ -1,6 +1,7 @@
 <script type="ts">
   import { Section, Container, Column } from "@mateoroldos/svelte.bones";
-  import { Gradient, GradientWrapper } from '$lib/components/gradients'
+  import { Gradient, GradientWrapper } from '$lib/components/gradients';
+  import { purchaseEmeraldPass, timeOnEmeraldPass } from "$flow/actions.js";
 </script>
 
 <div style="position: relative;">

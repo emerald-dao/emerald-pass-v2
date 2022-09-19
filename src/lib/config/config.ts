@@ -1,6 +1,6 @@
 const dappInfo = {
-	title: 'Emerald Boilerplate',
-	description: 'SvelteKit Boilerplate for creating Flow dapps',
+	title: 'Emerald Pass',
+	description: "Unlock Emerald City's power",
 	url: 'pending.com',
 	author: 'Emerald City DAO',
 	icon: 'https://i.imgur.com/KSL4gq0.png'

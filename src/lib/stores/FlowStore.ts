@@ -1,4 +1,6 @@
+import persistentWritable from '$lib/utilities/persistentWritable';
 import { writable, derived } from 'svelte/store';
+import { replaceWithProperValues } from '$flow/actions.js';
 
 const contractData = {
 	NonFungibleToken: {
@@ -17,20 +19,20 @@ const contractData = {
 		testnet: '0x7e60df042a9c0868',
 		mainnet: '0x1654653399040a61'
 	},
+	FUSD: {
+		testnet: '0xe223d8a629e49c68',
+		mainnet: '0x3c5959b568896393'
+	},
 	ECTreasury: {
 		testnet: '0x6c0d53c676256e8c',
 		mainnet: '0x5643fd47a29770e7'
 	},
 	MintVerifiers: {
-		testnet: '0xaf717f34dcb01af1',
+		testnet: '0x73a19dd056affc4d',
 		mainnet: ''
 	},
 	TouchstoneContracts: {
-		testnet: '0xaf717f34dcb01af1',
-		mainnet: ''
-	},
-	TouchstonePurchases: {
-		testnet: '0xaf717f34dcb01af1',
+		testnet: '0xd24f69d0e1865520',
 		mainnet: ''
 	},
 	FLOAT: {
@@ -48,6 +50,10 @@ const contractData = {
 	EmeraldPass: {
 		testnet: '0x88b6d0be84df0918',
 		mainnet: ''
+	},
+	NFTCatalog: {
+		testnet: '0x324c34e1c517e4db',
+		mainnet: '0x49a7cda3a1eecc29'
 	}
 };
 
@@ -61,6 +67,7 @@ export const addresses = derived([network], ([$network]) => {
 		NonFungibleToken: contractData.NonFungibleToken[$network],
 		MetadataViews: contractData.MetadataViews[$network],
 		FungibleToken: contractData.FungibleToken[$network],
+		FUSD: contractData.FUSD[$network],
 		FlowToken: contractData.FlowToken[$network],
 		ECTreasury: contractData.ECTreasury[$network],
 		MintVerifiers: contractData.MintVerifiers[$network],
@@ -68,7 +75,60 @@ export const addresses = derived([network], ([$network]) => {
 		FIND: contractData.FIND[$network],
 		FN: contractData.FN[$network],
 		TouchstoneContracts: contractData.TouchstoneContracts[$network],
-		TouchstonePurchases: contractData.TouchstonePurchases[$network],
-		EmeraldPass: contractData.EmeraldPass[$network]
+		EmeraldPass: contractData.EmeraldPass[$network],
+		NFTCatalog: contractData.NFTCatalog[$network]
 	};
 });
+
+export const contractInfo = persistentWritable('contractInfo', {
+	name: '',
+	contractName: '',
+	description: '',
+	image: null,
+	imageName: '',
+	bannerImage: null,
+	bannerImageName: '',
+	website: '',
+	discord: '',
+	twitter: '',
+	payment: null,
+	// Contract Options
+	startMinting: true,
+	royalty: false,
+	royaltyText: '',
+	royaltyNumber: '',
+	// Verifier Options
+	floatLink: false,
+	floatLinkText: '',
+	requireEmeraldPass: false
+});
+
+export const contractCode = derived([contractInfo, user, addresses], ([$contractInfo, $user]) => {
+	return replaceWithProperValues(contract, $contractInfo.contractName, undefined).replaceAll(
+		'USER_ADDR',
+		$user.addr
+	);
+});
+
+export const restartContractInfo = () => {
+	contractInfo.set({
+		name: '',
+		contractName: '',
+		description: '',
+		image: null,
+		imageName: '',
+		bannerImage: null,
+		bannerImageName: '',
+		website: '',
+		discord: '',
+		twitter: '',
+		payment: null,
+		startMinting: true,
+		royalty: false,
+		royaltyText: '',
+		royaltyNumber: 0,
+		floatLink: false,
+		floatLinkText: '',
+		requireEmeraldPass: false
+	});
+};

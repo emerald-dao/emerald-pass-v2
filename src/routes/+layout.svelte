@@ -1,10 +1,10 @@
 <script type="ts">
 	import '../app.postcss';
 	import '$lib/styles/app.scss';
-	import { Header, Footer } from '@emerald-dao/component-library'
+	import { Header, Footer, TransactionModal } from '@emerald-dao/component-library'
 	import { theme } from '$stores/ThemeStore';
 	import { logIn, unauthenticate } from '$flow/actions';
-	import { user } from '$stores/FlowStore';
+	import { user, transactionInProgress, transactionStatus } from '$stores/FlowStore';
 	import { getFindProfile } from '$flow/utils'
 </script>
 
@@ -13,3 +13,5 @@
 	<slot />
 </main>
 <Footer/>
+
+<TransactionModal transactionInProgress={$transactionInProgress} transactionStatus={$transactionStatus} dappLogo="/ec-logo.png"/>
