@@ -13,7 +13,7 @@
           <p>
             Emerald Pass allows you to gain access to tons of premium features across all of our products, all under one subscription. See below for subscriber benefits, purchasing, and more.
           </p>
-          <Button size="large">Purchase Now</Button>
+          <Button size="large" href="/#purchase">Purchase Now</Button>
         </Column>
       </div>
       <GradientWrapper>
