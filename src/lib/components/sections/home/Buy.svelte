@@ -7,7 +7,7 @@
   import { user } from "$stores/FlowStore"
 </script>
 
-<div id="purchase">
+<div id="purchase" class="section-wrapper">
   <Section paddingTop="large" paddingBottom="large">
     <Container width="small">
       <Column>
@@ -56,34 +56,38 @@
 <style type="scss">
   @use "../../../styles/utils" as *;
 
-  .countdown-container {
-    text-align: center;
-  }
+  .section-wrapper {
+    border-top: 2px var(--clr-primary-main-t7) solid;
 
-  .cards-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-    text-align: center;
-
-    @include mq(medium) {
-      flex-direction: row;
+    .countdown-container {
+      text-align: center;
     }
 
-    .buy-card {
-      background-color: var(--clr-primary-main);
-      color: var(--clr-font-text-inverse);
-      border-radius: 2.3rem;
-      padding: 4rem;
-      box-shadow: 0 0 40px 0 var(--clr-neutral-100);
-      height: 100%;
+    .cards-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+      text-align: center;
 
-      h3 {
-        color: var(--clr-font-heading-inverse);
+      @include mq(medium) {
+        flex-direction: row;
       }
 
-      span {
-        font-family: var(--ff-mono);
+      .buy-card {
+        background-color: var(--clr-primary-main);
+        color: var(--clr-font-text-inverse);
+        border-radius: 2.3rem;
+        padding: 4rem;
+        box-shadow: 0 0 40px 0 var(--clr-neutral-100);
+        height: 100%;
+
+        h3 {
+          color: var(--clr-font-heading-inverse);
+        }
+
+        span {
+          font-family: var(--ff-mono);
+        }
       }
     }
   }
