@@ -5,9 +5,9 @@
 </script>
 
 <div style="position: relative;">
-  <Section paddingBottom="large" paddingTop="small">
+  <Section paddingBottom="medium" paddingTop="none">
     <Container width="small">
-      <Column>
+      <Column gap="small">
         <h1><span>Emerald's City DAO</span><br/>Emerald Pass</h1>
         <video width="480px" height="100%" autoplay loop muted>
           <source src="emerald-pass.webm" type="video/webm" />
