@@ -3,24 +3,34 @@
   import { Section, Container, Column, AdaptableGrid, Row } from "@mateoroldos/svelte.bones";
   import { logIn } from '$flow/actions';
 	import { FlowConnect, Button, DiscordInvite } from "@emerald-dao/component-library";
+  import projects from "$lib/data/projects";
+  import faqs from "$lib/data/faqs";
+  import purchasePlans from "$lib/config/purchase";
+  import daoStats from "$lib/data/daoStats";
+	import { prefetch } from "$app/navigation";
 </script>
 
 <Section paddingBottom="large" paddingTop="small">
   <Container width="small">
-    <Column gap={1}>
+    <Column>
       <h1><span>Emerald's City DAO</span><br/>Emerald Pass</h1>
-      <video width="600px" height="100%" autoplay loop muted>
-        <source src="emerald2.webm" type="video/webm" />
+      <video width="480px" height="100%" autoplay loop muted>
+        <source src="emerald-pass.webm" type="video/webm" />
         <track kind="captions" />
         Your browser does not support the video tag.
       </video>
-      <Column gap="small" align="center">
+    </Column>
+  </Container>
+</Section>
+
+<Section paddingTop="large" paddingBottom="large">
+  <Container width="small">
+    <Column gap="small" align="center">
       <h2>Unlock Emerald City's <strong>Power</strong></h2>
       <p>
         Emerald Pass allows you to gain access to tons of premium features across all of our products, all under one subscription. See below for subscriber benefits, purchasing, and more.
       </p>
       <Button size="large">Purchase Now</Button>
-    </Column>
     </Column>
   </Container>
 </Section>
@@ -29,44 +39,27 @@
   <Container>
     <div class="grid">
       <div class="sticky">
-        <Column gap={2} justify="flex-start">
+        <Column gap={2} justify="flex-start" align="flex-start">
           <h2>Emerald City is <strong>Huge</strong></h2>
+          <Row gap={1.3} align="flex-start" justify="flex-start">
+            {#each projects as project}
+              <img class="logo" src={project.logo} alt={`${project.name} logo`}>
+            {/each}
+          </Row>
           <p>
             Emerald City has built main stream products on Flow such as FLOAT, which consistently more used than NBATopShot.
           </p>
         </Column>
       </div>
       <Column gap={5} align="flex-start" justify="flex-start">
-        
-        <Row gap={1.3} align="flex-start" justify="flex-start">
-          <img class="logo" src="/ec-logo.png" alt="emerald city dao">
-          <img class="logo" src="/ec-logo.png" alt="emerald city dao">
-          <img class="logo" src="/ec-logo.png" alt="emerald city dao">
-          <img class="logo" src="/ec-logo.png" alt="emerald city dao">
-          <img class="logo" src="/ec-logo.png" alt="emerald city dao">
-          <img class="logo" src="/ec-logo.png" alt="emerald city dao">
-        </Row>
-        <span class="red">
-          TODO: THE TOP LOGOS ARE JUST PLACEHOLDER FOR EMERALD'S PROJECTS
-        </span>
-        <Column gap={1.2} align="flex-start" justify="flex-start">
-          <h3>134 Projects</h3>
-          <p>
-            Over 100 communities use Emerald City on Flow.
-          </p>
-        </Column>
-        <Column gap={1.2} align="flex-start">
-          <h3>134 Projects</h3>
-          <p>
-            Over 100 communities use Emerald City on Flow.
-          </p>
-        </Column>
-        <Column gap={1.2} align="flex-start">
-          <h3>134 Projects</h3>
-          <p>
-            Over 100 communities use Emerald City on Flow.
-          </p>
-        </Column>
+        {#each daoStats as stat}
+          <Column gap={1.2} align="flex-start" justify="flex-start">
+            <h3>{stat.title}</h3>
+            <p>
+              {stat.description}
+            </p>
+          </Column>
+        {/each}
       </Column>
     </div>
   </Container>
@@ -85,54 +78,20 @@
           </Column>
         </div>
         <Column>
+          {#each projects as project}
           <div class="card">
-            <Column gap={1}>
-              <span>Proof of atendance Token</span>
-              <Row gap={1}>
-                <img src="/ec-logo.png" alt="emerald city dao">
-                <h3>FLOAT</h3>
-              </Row>
-            </Column>
+            <Row gap={1}>
+              <img src={project.logo} alt={`${project.name} logo`}>
+              <h3>{project.name}</h3>
+            </Row>
+            <span>{project.slogan}</span>
             <ul>
-              <li>Access to Challenges feature</li>
+              {#each project.benefits as benefit}
+                <li>{benefit}</li>
+              {/each}
             </ul>
           </div>
-          <div class="card">
-            <Column gap={1}>
-              <span>Proof of atendance Token</span>
-              <Row gap={1}>
-                <img src="/ec-logo.png" alt="emerald city dao">
-                <h3>FLOAT</h3>
-              </Row>
-            </Column>
-            <ul>
-              <li>Access to Challenges feature</li>
-            </ul>
-          </div>
-          <div class="card">
-            <Column gap={1}>
-              <span>Proof of atendance Token</span>
-              <Row gap={1}>
-                <img src="/ec-logo.png" alt="emerald city dao">
-                <h3>FLOAT</h3>
-              </Row>
-            </Column>
-            <ul>
-              <li>Access to Challenges feature</li>
-            </ul>
-          </div>
-          <div class="card">
-            <Column gap={1}>
-              <span>Proof of atendance Token</span>
-              <Row gap={1}>
-                <img src="/ec-logo.png" alt="emerald city dao">
-                <h3>FLOAT</h3>
-              </Row>
-            </Column>
-            <ul>
-              <li>Access to Challenges feature</li>
-            </ul>
-          </div>
+          {/each}
         </Column>
     </Container>
   </Section>
@@ -150,40 +109,46 @@
         </Column>
       </div>
       <Column gap={5} align="flex-start" justify="flex-start">
-        <Column gap={1.2} align="flex-start" justify="flex-start">
-          <h4>What is Emerald City DAO?</h4>
-          <p>
-            Emerald City is the first DAO on the Flow Blockchain, and also, without any doubt, the coolest DAO in the whole universe.
-          </p>
-        </Column>
-        <Column gap={1.2} align="flex-start" justify="flex-start">
-          <h4>What is Emerald City DAO?</h4>
-          <p>
-            Emerald City is the first DAO on the Flow Blockchain, and also, without any doubt, the coolest DAO in the whole universe.
-          </p>
-        </Column>
-        <Column gap={1.2} align="flex-start" justify="flex-start">
-          <h4>What is Emerald City DAO?</h4>
-          <p>
-            Emerald City is the first DAO on the Flow Blockchain, and also, without any doubt, the coolest DAO in the whole universe.
-          </p>
-        </Column>
-        <Column gap={1.2} align="flex-start" justify="flex-start">
-          <h4>What is Emerald City DAO?</h4>
-          <p>
-            Emerald City is the first DAO on the Flow Blockchain, and also, without any doubt, the coolest DAO in the whole universe.
-          </p>
-        </Column>
+        {#each faqs as faq}
+          <Column gap={1.2} align="flex-start" justify="flex-start">
+            <h4>{faq.question}</h4>
+            <p>
+              {faq.answer}
+            </p>
+          </Column>
+        {/each}
       </Column>
     </div>
   </Container>
 </Section>
 
 <Section paddingTop="large" paddingBottom="large">
-  <span class="red">
-    TODO: EDIT THIS COMPONENT ON THE COMPONENT LIBRARY!!
-  </span>
-  <DiscordInvite/>
+  <Container>
+    <Column>
+      <h2>Get Your Pass Now</h2>
+      <Row>
+        {#each purchasePlans as plan}
+          <div class="buy-card">
+            <Column gap="small">
+              <h3>{plan.name}</h3>
+              <span>{plan.price}</span>
+              <p>
+                {plan.description}
+              </p>
+              <Button
+                href="/buy"
+                prefetch={true}
+                color="neutral"
+                size="large"
+              >
+                Buy Pass
+              </Button>
+            </Column>
+          </div>
+        {/each}
+      </Row>
+    </Column>
+  </Container>
 </Section>
 
 <style type="scss">
@@ -250,7 +215,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1.4rem;
+    gap: 1rem;
     background-color: var(--clr-background-primary);
     border-radius: 1rem;
     padding: 3rem;
@@ -258,9 +223,16 @@
 
 
     span {
-      color: var(--clr-primary-main);
-      font-family: var(--ff-mono);
+      color: var(--clr-font-heading);
+      font-family: var(--ff-text);
+      font-size: var(--fs-400);
+    }
+
+    ul {
       font-size: var(--fs-300);
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
     }
     
 
@@ -279,11 +251,18 @@
     max-width: 3rem;
   }
 
+  .buy-card {
+    background-color: var(--clr-primary-main);
+    border-radius: 2.3rem;
+    padding: 4rem;
+    color: var(--clr-font-text-inverse);
+
+		h3 {
+			color: var(--clr-font-text-inverse);
+		}
+  }
+
   :root {
     --bones-section-padding-m: 8rem;
-  }
-  
-  .red {
-    color: red;
   }
 </style>
