@@ -1,0 +1,15 @@
+<div>
+  <slot/>
+</div>
+
+<style type="scss">
+  div {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    overflow: hidden;
+  }
+</style>

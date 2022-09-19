@@ -2,7 +2,6 @@
 	import '../app.postcss';
 	import '$lib/styles/app.scss';
 	import { Header, Footer } from '@emerald-dao/component-library'
-	import { navElements } from '$lib/config/navigation';
 	import { theme } from '$stores/ThemeStore';
 	import { logIn, unauthenticate } from '$flow/actions';
 	import { user } from '$stores/FlowStore';
@@ -13,4 +12,4 @@
 <main>
 	<slot />
 </main>
-<Footer navElements={navElements}/>
+<Footer/>

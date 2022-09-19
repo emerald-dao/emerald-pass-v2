@@ -59,8 +59,8 @@ small,
 }
 
 strong {
-	--font-weight: 500;
-	font-weight: normal;
+	color: var(--clr-primary-main);
+	--font-weight: 700;
 }
 
 a {
