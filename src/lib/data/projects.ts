@@ -3,7 +3,7 @@ const projects = [
 		name: 'Emerald Academy',
 		slogan: 'Learn everything about the Flow Blockchain and Cadence',
 		url: 'https://academy.ecdao.org/',
-		logo: '/project-logos/academy-logo.png',
+		logo: '/projects-logos/academy-logo.png',
 		benefits: ['Receive discounts on paid courses/bootcamps', 'Access to automatic resume builder (not yet completed)']
 	},
 	{
