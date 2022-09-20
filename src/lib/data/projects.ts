@@ -8,14 +8,14 @@ const projects = [
 	},
 	{
 		name: 'FLOAT',
-		slogan: 'Proof of Attendance Token',
+		slogan: 'Proof of Attendance Platform',
 		url: 'https://floats.city/',
 		logo: '/projects-logos/float-logo.png',
 		benefits: ['Access to creating Challenges']
 	},
 	{
 		name: 'Touchstone',
-		slogan: 'Tools for creating NFT Collections and Contracts on the Flow Blockchain',
+		slogan: 'Tools for creating NFT Collections and Contracts on the Flow blockchain',
 		url: 'https://touchstone.city/',
 		logo: '/projects-logos/touchstone-logo.png',
 		benefits: [
