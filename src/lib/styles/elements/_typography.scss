@@ -6,24 +6,25 @@ body {
 	font-size: var(--fs-400);
 	font-family: var(--ff-text);
 	color: var(--clr-font-text);
-	--font-weight: 200;
+	--font-weight: 320;
 }
 
 h1,
 h2,
 h3,
 h4 {
-	--font-weight: 700;
+	--font-weight: 740;
 	--font-width: 10;
 	font-weight: 500;
 	font-stretch: 100%;
 	line-height: 1.1;
 	color: var(--clr-font-heading);
 	font-family: var(--ff-heading);
+	letter-spacing: -0.02em;
 }
 
 h1 {
-	--font-weight: 700;
+	--font-weight: 830;
 	color: var(--clr-font-heading);
 }
 

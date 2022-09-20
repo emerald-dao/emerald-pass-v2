@@ -18,10 +18,10 @@
           </Column>
         </div>
         <div slot="right">        
-          <Column >
+          <Column>
             {#each projects as project}
             <div class="card">
-              <Row gap={1}>
+              <Row gap={1.5}>
                 <img src={project.logo} alt={`${project.name} logo`}>
                 <h3>{project.name}</h3>
               </Row>
@@ -45,17 +45,11 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 2.2rem;
     background-color: var(--clr-background-primary);
     border-radius: 1rem;
     padding: 3rem;
     width: 100%;
-
-    span {
-      color: var(--clr-font-heading);
-      font-family: var(--ff-text);
-      font-size: var(--fs-400);
-    }
 
     ul {
       font-size: var(--fs-300);

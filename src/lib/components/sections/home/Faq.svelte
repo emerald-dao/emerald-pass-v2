@@ -18,9 +18,9 @@
       <div slot="right">
         <Column gap={5} align="flex-start" justify="flex-start">
           {#each faqs as faq}
-            <Column gap={1.2} align="flex-start" justify="flex-start">
+            <Column gap={1.5} align="flex-start" justify="flex-start">
               <h4>{faq.question}</h4>
-              <p>
+              <p class="answer">
                 {faq.answer}
               </p>
             </Column>
@@ -30,3 +30,9 @@
     </Grid1>
   </Container>
 </Section>
+
+<style type="scss">
+  .answer {
+    font-size: var(--fs-300);
+  }
+</style>

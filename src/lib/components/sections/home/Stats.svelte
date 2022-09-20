@@ -23,11 +23,11 @@
         </Column>
       </div>
       <div slot="right">
-        <Column gap={5} align="flex-start" justify="flex-start">
+        <Column gap={6} align="flex-start" justify="flex-start">
           {#each daoStats as stat}
-            <Column gap={1.2} align="flex-start" justify="flex-start">
+            <Column gap={1.5} align="flex-start" justify="flex-start">
               <h3>{stat.title}</h3>
-              <p>
+              <p class="stat">
                 {stat.description}
               </p>
             </Column>
@@ -41,5 +41,13 @@
 <style type="scss">
   .logo {
     max-width: 3rem;
+  }
+
+  h3 {
+    max-width: 60ch;
+  }
+  .stat {
+    font-size: var(--fs-300);
+    max-width: 60ch;
   }
 </style>
