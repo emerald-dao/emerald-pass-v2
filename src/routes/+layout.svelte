@@ -14,4 +14,4 @@
 </main>
 <Footer/>
 
-<TransactionModal transactionInProgress={$transactionInProgress} transactionStatus={$transactionStatus} dappLogo="/ec-logo.png"/>
+<TransactionModal transactionInProgress={$transactionInProgress} transactionStatus={$transactionStatus} dappLogo="/ec-logo.png" border={true}/>

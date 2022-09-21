@@ -4,8 +4,8 @@
 
 <Hero/>
 <Intro/>
-<Stats/>
-<Benefits/>
+<!-- <Stats/> -->
+<Benefits backgroundColor="green"/>
 <Faq/>
 <Buy/>
 

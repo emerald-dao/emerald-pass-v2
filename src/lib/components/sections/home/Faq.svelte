@@ -9,9 +9,9 @@
     <Grid1>
       <div slot="left">
         <Column gap={2} justify="flex-start">
-          <h2>Frequently Asked Questions</h2>
+          <h2><strong>F</strong>requently <strong>A</strong>sked <strong>Q</strong>uestions</h2>
           <p>
-            Emerald City has built main stream products on Flow such as FLOAT, which consistently more used than NBATopShot.
+            Here are answers to some commonly asked questions - feel free to reach out to us in the Emerald Pass channel in our Discord for more information.
           </p>
         </Column>
       </div>
@@ -32,6 +32,10 @@
 </Section>
 
 <style type="scss">
+  h4 {
+    font-family: var(--ff-text);
+    text-transform: none;
+  }
   .answer {
     font-size: var(--fs-300);
   }

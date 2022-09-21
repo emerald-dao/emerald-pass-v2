@@ -4,34 +4,33 @@
 	import { Grid1 } from "$lib/components/layouts";
 </script>
 
-
 <div style="background-color: var(--clr-primary-main)">
   <Section paddingTop="large" paddingBottom="large">
     <Container>
       <Grid1>
         <div class="sticky" slot="left">
           <Column gap={2} justify="flex-start">
-            <h2 style="color: var(--clr-font-heading-inverse)">Get exclusive access to our benefits</h2>
+            <h2 style="color: var(--clr-font-heading-inverse)"><span class="border-text-inverse">Get access to</span> exclusive benefits</h2>
             <p style="color: var(--clr-font-text-inverse)">
-              As an Emerald Pass subscriber, you will be able to get premium features and abilities on all of our products, including some educational material.
+              Emerald Pass subscribers enjoy exclusive benefits across all of our products & services - including upcoming paid education offerings
             </p>
           </Column>
         </div>
         <div slot="right">        
           <Column>
             {#each projects as project}
-            <div class="card">
-              <Row gap={1.5}>
-                <img src={project.logo} alt={`${project.name} logo`}>
-                <h3>{project.name}</h3>
-              </Row>
-              <span>{project.slogan}</span>
-              <ul>
-                {#each project.benefits as benefit}
-                  <li>{benefit}</li>
-                {/each}
-              </ul>
-            </div>
+              <div class="card">
+                <Row gap={1.5}>
+                  <img src={project.logo} alt={`${project.name} logo`}>
+                  <h3>{project.name}</h3>
+                </Row>
+                <span>{project.slogan}</span>
+                <ul>
+                  {#each project.benefits as benefit}
+                    <li>{benefit}</li>
+                  {/each}
+                </ul>
+              </div>
             {/each}
           </Column>
         </div>
@@ -50,6 +49,10 @@
     border-radius: 1rem;
     padding: 3rem;
     width: 100%;
+
+    h3 {
+      font-size: var(--fs-500);
+    }
 
     ul {
       font-size: var(--fs-300);

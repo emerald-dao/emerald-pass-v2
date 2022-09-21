@@ -5,13 +5,18 @@
   import { purchaseEmeraldPass, timeOnEmeraldPass } from "$flow/actions.js";
   import Countdown from "$components/utility/Countdown.svelte";
   import { user } from "$stores/FlowStore"
+	import { Gradient, GradientWrapper } from '$lib/components/gradients';
 </script>
 
 <div id="purchase" class="section-wrapper">
   <Section paddingTop="large" paddingBottom="large">
+    <GradientWrapper>
+      <Gradient width="400px" height="500px" left="26%" top="60%" blur="150px"/>
+      <Gradient width="400px" height="500px" left="75%" top="46%" blur="150px"/>
+    </GradientWrapper>
     <Container width="small">
       <Column>
-        <h2>Get Your Pass Now</h2>
+        <h2>Get Your <br/><strong>Emerald Pass</strong><br/> Now</h2>
         {#if $user?.loggedIn}
           <div class="countdown-container">
             {#await timeOnEmeraldPass($user.addr) then endingTime}
@@ -44,6 +49,11 @@
                 >
                   Buy Pass
                 </Button>
+                {#if plan.ribbon}
+                  <div class="ribbon ribbon-top-left">
+                    <span>{plan.ribbon}</span>
+                  </div>
+                {/if}
               </Column>
             </div>
           {/each}
@@ -58,6 +68,8 @@
 
   .section-wrapper {
     border-top: 2px var(--clr-primary-main-t7) solid;
+    text-align: center;
+    position: relative;
 
     .countdown-container {
       text-align: center;
@@ -78,15 +90,14 @@
         color: var(--clr-font-text-inverse);
         border-radius: 2.3rem;
         padding: 4rem;
-        box-shadow: 0 0 40px 0 var(--clr-neutral-100);
         height: 100%;
+        box-shadow: 0 0 38px 0px var(--clr-background-primary);
+        position: relative;
 
         h3 {
+          font-family: var(--ff-text);
           color: var(--clr-font-heading-inverse);
-        }
-
-        span {
-          font-family: var(--ff-mono);
+          text-transform: none;
         }
       }
     }
