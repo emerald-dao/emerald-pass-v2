@@ -53,8 +53,8 @@
         </div>
       </Column>
       <GradientWrapper>
-        <Gradient width="500px" height="600px" left="70%" top="60%" blur="200px"/>
-        <Gradient width="500px" height="600px" left="30%" top="70%" blur="200px"/>
+        <Gradient width="380px" height="650px" left="70%" top="60%" blur="200px"/>
+        <Gradient width="350px" height="650px" left="30%" top="62%" blur="200px"/>
       </GradientWrapper>
     </Container>
   </Section>
