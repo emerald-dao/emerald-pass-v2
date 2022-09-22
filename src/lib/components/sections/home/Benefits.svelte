@@ -21,7 +21,7 @@
           <Column>
             {#each projects as project}
               <div class="card">
-                <Row gap={1.5}>
+                <Row gap={1} align="center">
                   <img src={project.logo} alt={`${project.name} logo`}>
                   <h3>{project.name}</h3>
                 </Row>

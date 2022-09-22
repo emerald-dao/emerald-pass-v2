@@ -10,10 +10,6 @@
 
 <div id="purchase" class="section-wrapper">
   <Section paddingTop="large" paddingBottom="large">
-    <GradientWrapper>
-      <Gradient width="600px" height="600px" left="26%" top="60%" blur="200px"/>
-      <Gradient width="600px" height="600px" left="75%" top="56%" blur="200px"/>
-    </GradientWrapper>
     <Container width="small">
       <Column>
         <h2>Get Your <br/><strong>Emerald Pass</strong><br/> Now</h2>
@@ -56,6 +52,10 @@
           {/each}
         </div>
       </Column>
+      <GradientWrapper>
+        <Gradient width="600px" height="600px" left="26%" top="60%" blur="200px"/>
+        <Gradient width="600px" height="600px" left="75%" top="56%" blur="200px"/>
+      </GradientWrapper>
     </Container>
   </Section>
 </div>
