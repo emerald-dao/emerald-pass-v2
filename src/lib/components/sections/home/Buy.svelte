@@ -67,7 +67,6 @@
     position: relative;
     border-top: 2px var(--clr-primary-main-t7) solid;
     text-align: center;
-    
 
     .countdown-container {
       text-align: center;
@@ -89,7 +88,7 @@
         padding-block: 4rem;
         padding-inline: 2rem;
         height: 100%;
-        box-shadow: 0 0 30px 0px var(--clr-background-primary);
+        box-shadow: 0 0 30px 10px var(--clr-background-secondary);
         position: relative;
 
         h3 {
