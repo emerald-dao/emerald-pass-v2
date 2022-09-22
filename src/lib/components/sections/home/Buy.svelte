@@ -28,13 +28,25 @@
         {/if}
         <div class="cards-wrapper">
           {#each purchasePlans as plan}
-            <div class="buy-card">
-              <Column gap={3}>
+            <div class="buy-card" class:featured={plan.ribbon}>
+              <div>
                 <h3>{plan.name}</h3>
-                <span>{`${Number(plan.price).toFixed(0)} $FUSD`}</span>
-                <p>
-                  {plan.description}
-                </p>
+                <Column gap="none">
+                  <span class="price">{`${Number(plan.price).toFixed(0)} $FUSD`}</span>
+                  <p>
+                    {plan.description}
+                  </p>
+                  {#if plan.ribbon}
+                    <!-- <div class="ribbon ribbon-top-left">
+                      <span>{plan.ribbon}</span>
+                    </div> -->
+                    <div class="alert">
+                      <span>{plan.ribbon}</span>
+                    </div>
+                  {/if}
+                </Column>
+              </div>
+                
                 <Button
                   prefetch={true}
                   size="full-width"
@@ -42,13 +54,7 @@
                 >
                   Buy Pass
                 </Button>
-                {#if plan.ribbon}
-                  <div class="ribbon ribbon-top-left">
-                    <span>{plan.ribbon}</span>
-                  </div>
-                {/if}
-              </Column>
-            </div>
+             </div>
           {/each}
         </div>
       </Column>
@@ -79,7 +85,8 @@
       text-align: center;
 
       @include mq(medium) {
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
       }
 
       .buy-card {
@@ -87,15 +94,50 @@
         border-radius: 2.3rem;
         padding-block: 4rem;
         padding-inline: 2rem;
+        min-height: 1px;
         height: 100%;
         box-shadow: 0 0 30px 10px var(--clr-background-secondary);
         position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
 
         h3 {
           font-family: var(--ff-text);
           text-transform: none;
+          margin-bottom: 1rem;
         }
+
+        .price {
+          border-bottom: 1.6px var(--clr-font-text-t8) solid;
+          padding-bottom: 1.6rem;
+          width: 70%;
+        }
+
+        p {
+          font-size: var(--fs-300);
+          margin-top: 2rem;
+          margin-bottom: 4.4rem;
+        }
+
+        .alert {
+          background-color: var(--clr-primary-200);
+          // color: var(--clr-primary-main-t4);
+          border-radius: 0.7rem;
+          padding: 0.4em 1.8em;
+          font-size: var(--fs-200);
+          width: fit-content;
+          position: absolute;
+          top: 0;
+          margin-top: -1.2em;
+        }
+      }
+
+      .featured {
+        border: 2px var(--clr-primary-200) solid;
       }
     }
   }
+
 </style>

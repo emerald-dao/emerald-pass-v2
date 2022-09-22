@@ -57,7 +57,7 @@
         background-color: var(--clr-neutral-100);
         padding: 3rem;
         border-radius: 2rem;
-        box-shadow: 0 0 8px 0px var(--clr-background-primary);
+        box-shadow: 0 0 30px 10px var(--clr-background-secondary);
       }
 
       h3 {
