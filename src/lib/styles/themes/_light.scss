@@ -4,7 +4,7 @@
 $light: (
 	primary: (
 		main:
-			hsla(map-deep-get($colors, primary, 'hue'), map-deep-get($colors, primary, 'saturation'), 32%),
+			hsla(map-deep-get($colors, primary, 'hue'), map-deep-get($colors, primary, 'saturation'), 40%),
 		100:
 			hsla(map-deep-get($colors, primary, 'hue'), map-deep-get($colors, primary, 'saturation'), 90%),
 		200:

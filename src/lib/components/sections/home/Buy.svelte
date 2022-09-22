@@ -11,8 +11,8 @@
 <div id="purchase" class="section-wrapper">
   <Section paddingTop="large" paddingBottom="large">
     <GradientWrapper>
-      <Gradient width="400px" height="500px" left="26%" top="60%" blur="150px"/>
-      <Gradient width="400px" height="500px" left="75%" top="46%" blur="150px"/>
+      <Gradient width="600px" height="600px" left="26%" top="60%" blur="200px"/>
+      <Gradient width="600px" height="600px" left="75%" top="56%" blur="200px"/>
     </GradientWrapper>
     <Container width="small">
       <Column>
@@ -33,7 +33,7 @@
         <div class="cards-wrapper">
           {#each purchasePlans as plan}
             <div class="buy-card">
-              <Column gap="small">
+              <Column gap={3}>
                 <h3>{plan.name}</h3>
                 <span>{`${Number(plan.price).toFixed(0)} $FUSD`}</span>
                 <p>
@@ -41,10 +41,7 @@
                 </p>
                 <Button
                   prefetch={true}
-                  color="neutral"
                   size="full-width"
-                  --clr-neutral-800=var(--clr-neutral-100)
-                  --clr-font-text-inverse=var(--clr-font-text)
                   on:click={() => purchaseEmeraldPass(plan.subscriptionTime, plan.price)}
                 >
                   Buy Pass
@@ -86,17 +83,16 @@
       }
 
       .buy-card {
-        background-color: var(--clr-primary-main);
-        color: var(--clr-font-text-inverse);
+        background-color: var(--clr-background-primary);
         border-radius: 2.3rem;
-        padding: 4rem;
+        padding-block: 4rem;
+        padding-inline: 2rem;
         height: 100%;
-        box-shadow: 0 0 38px 0px var(--clr-background-primary);
+        box-shadow: 0 0 30px 0px var(--clr-background-primary);
         position: relative;
 
         h3 {
           font-family: var(--ff-text);
-          color: var(--clr-font-heading-inverse);
           text-transform: none;
         }
       }

@@ -6,9 +6,10 @@
 	import { logIn, unauthenticate } from '$flow/actions';
 	import { user, transactionInProgress, transactionStatus } from '$stores/FlowStore';
 	import { getFindProfile } from '$flow/utils'
+	import { navElements } from '$lib/config/navigation';
 </script>
 
-<Header themeStore={$theme} {logIn} {unauthenticate} {getFindProfile} user={$user}/>
+<Header themeStore={$theme} {logIn} {unauthenticate} {getFindProfile} user={$user} {navElements}/>
 <main>
 	<slot />
 </main>

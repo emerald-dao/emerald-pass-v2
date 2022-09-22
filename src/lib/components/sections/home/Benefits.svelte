@@ -2,9 +2,10 @@
   import { Section, Container, Column, Row } from "@mateoroldos/svelte.bones";
   import projects from "$lib/data/projects";
 	import { Grid1 } from "$lib/components/layouts";
+  import Icon from "@iconify/svelte"
 </script>
 
-<div style="background-color: var(--clr-primary-main)">
+<div style="background-color: var(--clr-primary-main)" id="benefits">
   <Section paddingTop="large" paddingBottom="large">
     <Container>
       <Grid1>
@@ -27,7 +28,7 @@
                 <span>{project.slogan}</span>
                 <ul>
                   {#each project.benefits as benefit}
-                    <li>{benefit}</li>
+                    <li><Icon icon="ion:checkmark-circle" color="var(--clr-primary-main)" width="1.6rem"/> {benefit}</li>
                   {/each}
                 </ul>
               </div>
@@ -40,25 +41,40 @@
 </div>
 
 <style type="scss">
+  @use "../../../styles/utils" as *;
+
   .card {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 2.2rem;
+    gap: 1.8rem;
     background-color: var(--clr-background-primary);
     border-radius: 1rem;
-    padding: 3rem;
+    padding: 4rem;
     width: 100%;
+    font-size: 1.12rem;
 
     h3 {
       font-size: var(--fs-500);
     }
 
     ul {
-      font-size: var(--fs-300);
       display: flex;
       flex-direction: column;
-      gap: 0.8rem;
+      gap: 1.4rem;
+      padding-left: 0;
+
+      @include mq(small) {
+        padding-left: 2rem;
+      }
+
+      li {
+        list-style: none;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        place-items: center start;
+        gap: 0.8rem;
+      }
     }
 
     img {

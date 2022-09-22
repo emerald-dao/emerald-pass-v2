@@ -13,6 +13,7 @@
         <p>The single subscription pass which gives you access to premium features across the numerous products and services offered by Emerald City.</p>
         <video width="480px" height="100%" autoplay loop muted>
           <source src="emerald-pass.webm" type="video/webm" />
+          <source src="emerald-pass.mp4" type="video/mp4" />
           <track kind="captions" />
           Your browser does not support the video tag.
         </video>
@@ -51,5 +52,6 @@
   
   video {
     margin-block: 3rem;
+    border-radius: 1rem;
   }
 </style>
