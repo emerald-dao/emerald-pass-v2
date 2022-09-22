@@ -53,8 +53,8 @@
         </div>
       </Column>
       <GradientWrapper>
-        <Gradient width="600px" height="600px" left="26%" top="60%" blur="200px"/>
-        <Gradient width="600px" height="600px" left="75%" top="56%" blur="200px"/>
+        <Gradient width="500px" height="600px" left="70%" top="60%" blur="200px"/>
+        <Gradient width="500px" height="600px" left="30%" top="70%" blur="200px"/>
       </GradientWrapper>
     </Container>
   </Section>
@@ -64,9 +64,10 @@
   @use "../../../styles/utils" as *;
 
   .section-wrapper {
+    position: relative;
     border-top: 2px var(--clr-primary-main-t7) solid;
     text-align: center;
-    position: relative;
+    
 
     .countdown-container {
       text-align: center;
