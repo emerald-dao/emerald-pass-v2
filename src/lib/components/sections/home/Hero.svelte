@@ -19,9 +19,9 @@
         </video>
         <Button size="large" href="/#purchase">Purchase Now</Button>
       </Column>
-      <GradientWrapper>
+      <!-- <GradientWrapper>
         <Gradient left="50%" top="60%" blur="200px" width="400px" height="400px"/>
-      </GradientWrapper>
+      </GradientWrapper> -->
     </Container>
   </Section>
 </div>
