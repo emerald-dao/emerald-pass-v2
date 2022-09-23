@@ -13,7 +13,7 @@
     <Container width="small">
       <Column>
         <!-- <h2>Get Your <br/><strong>Emerald Pass</strong><br/> Now</h2> -->
-        <h2>Soft Lighter Shadow</h2>
+        <h2>Card of different color</h2>
         {#if $user?.loggedIn}
           <div class="countdown-container">
             {#await timeOnEmeraldPass($user.addr) then endingTime}
@@ -38,19 +38,16 @@
                     {plan.description}
                   </p>
                   {#if plan.ribbon}
-                    <!-- <div class="ribbon ribbon-top-left">
-                      <span>{plan.ribbon}</span>
-                    </div> -->
-                    <div class="alert">
+                    <div class="ribbon ribbon-top-left">
                       <span>{plan.ribbon}</span>
                     </div>
                   {/if}
                 </Column>
               </div>
+                
                 <Button
                   prefetch={true}
                   size="full-width"
-                  type={plan.ribbon ? "generic" : "ghost"}
                   on:click={() => purchaseEmeraldPass(plan.subscriptionTime, plan.price)}
                 >
                   Buy Pass
@@ -91,13 +88,12 @@
       }
 
       .buy-card {
-        background-color: var(--clr-background-primary);
+        background-color: var(--clr-background-secondary);
         border-radius: 2.3rem;
         padding-block: 4rem;
         padding-inline: 2rem;
         min-height: 1px;
         height: 100%;
-        box-shadow: 0 0 10px 0px var(--clr-neutral-400-t7);
         position: relative;
         display: flex;
         flex-direction: column;
@@ -120,19 +116,6 @@
           font-size: var(--fs-300);
           margin-top: 2rem;
           margin-bottom: 4.4rem;
-        }
-
-        .alert {
-          background-color: var(--clr-primary-main);
-          color: var(--clr-font-text-inverse);
-          border-radius: 0.7rem;
-          padding: 0.4em 1.8em;
-          font-size: var(--fs-200);
-          width: fit-content;
-          position: absolute;
-          top: 0;
-          margin-top: -1.2em;
-          --font-weight: 600;
         }
       }
 

@@ -1,5 +1,5 @@
 <script type="ts">
-  import { Hero, Intro, Stats, Benefits, Faq, Buy, Buy2, Buy3} from '$lib/components/sections/home'
+  import { Hero, Intro, Stats, Benefits, Faq, Buy, Buy2, Buy3, Buy4 } from '$lib/components/sections/home'
 </script>
 
 <Hero/>
@@ -10,6 +10,7 @@
 <Buy/>
 <Buy2/>
 <Buy3/>
+<Buy4/>
 
 <style type="scss">
   :root {
