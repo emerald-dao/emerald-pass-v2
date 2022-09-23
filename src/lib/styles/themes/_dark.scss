@@ -90,7 +90,7 @@ $dark: (
 		primary:
 			hsla(map-deep-get($colors, neutral, 'hue'), map-deep-get($colors, neutral, 'saturation'), 0%),
 		secondary:
-			hsla(map-deep-get($colors, neutral, 'hue'), map-deep-get($colors, neutral, 'saturation'), 10%)
+			hsla(map-deep-get($colors, neutral, 'hue'), map-deep-get($colors, neutral, 'saturation'), 5%)
 	),
 	neutral: (
 		100:

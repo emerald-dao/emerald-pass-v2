@@ -1,11 +1,11 @@
 export const navElements = [
 	{
-		name: 'FAQ',
-		url: '/#faq'
-	},
-	{
 		name: 'Benefits',
 		url: '/#benefits'
+	},
+	{
+		name: 'FAQ',
+		url: '/#faq'
 	},
 	{
 		name: 'Purchase',

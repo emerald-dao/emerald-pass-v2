@@ -13,7 +13,7 @@
     <Container width="small">
       <Column>
         <!-- <h2>Get Your <br/><strong>Emerald Pass</strong><br/> Now</h2> -->
-        <h2>Soft Lighter Shadow</h2>
+        <h2>Soft Black Shadow / Thinner border</h2>
         {#if $user?.loggedIn}
           <div class="countdown-container">
             {#await timeOnEmeraldPass($user.addr) then endingTime}
@@ -47,11 +47,12 @@
                   {/if}
                 </Column>
               </div>
+                
                 <Button
                   prefetch={true}
                   size="full-width"
-                  type={plan.ribbon ? "generic" : "ghost"}
                   on:click={() => purchaseEmeraldPass(plan.subscriptionTime, plan.price)}
+                  color={plan.ribbon ? "primary" : "neutral"}
                 >
                   Buy Pass
                 </Button>
@@ -97,7 +98,7 @@
         padding-inline: 2rem;
         min-height: 1px;
         height: 100%;
-        box-shadow: 0px 0px 6px 0px var(--clr-neutral-400-t8);
+        box-shadow: 5px 5px 8px 0 var(--clr-background-secondary-t3);
         position: relative;
         display: flex;
         flex-direction: column;
@@ -137,7 +138,7 @@
       }
 
       .featured {
-        border: 2px var(--clr-primary-main) solid;
+        border: 1px var(--clr-primary-main) solid;
       }
     }
   }
