@@ -30,7 +30,7 @@ const projects = [
 		slogan: 'A Discord bot built on the Flow blockchain',
 		url: 'https://bot.ecdao.org/',
 		logo: '/projects-logos/emerald-bot-logo.png',
-		benefits: ['Setup a custom verifier for your Discord']
+		benefits: ['Setup a custom verifier for your Discord', 'Automatic role removal (in beta only for specific roles)']
 	},
 	{
 		name: 'Geeft',
