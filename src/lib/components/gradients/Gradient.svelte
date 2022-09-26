@@ -1,5 +1,5 @@
 <script type="ts">
-  export let color = "var(--clr-primary-main-t7)";
+  export let color = "var(--clr-primary-main-t8)";
   export let left = "25%";
   export let top = "45%";
   export let width = "600px"

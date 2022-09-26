@@ -54,10 +54,10 @@
       gap: 2rem;
 
       .feature-card {
-        background-color: var(--clr-neutral-100);
+        background-color: var(--clr-background-secondary);
         padding: 3rem;
         border-radius: 2rem;
-        box-shadow: 0px 0px 6px 0px var(--clr-neutral-400-t8);
+        box-shadow: 0 0 10px 0px var(--clr-background-primary-t5);
       }
 
       h3 {

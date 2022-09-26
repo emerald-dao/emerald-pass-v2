@@ -13,7 +13,8 @@
     <Container width="small">
       <Column>
         <!-- <h2>Get Your <br/><strong>Emerald Pass</strong><br/> Now</h2> -->
-        <h2>Option 4</h2>
+        <h2>Option 3</h2>
+        <p style="margin-top: -3rem;">Initial idea</p>
         {#if $user?.loggedIn}
           <div class="countdown-container">
             {#await timeOnEmeraldPass($user.addr) then endingTime}
@@ -38,12 +39,12 @@
                     {plan.description}
                   </p>
                   {#if plan.ribbon}
-                    <!-- <div class="ribbon ribbon-top-left">
-                      <span>{plan.ribbon}</span>
-                    </div> -->
-                    <div class="alert">
+                    <div class="ribbon ribbon-top-left">
                       <span>{plan.ribbon}</span>
                     </div>
+                    <!-- <div class="alert">
+                      <span>{plan.ribbon}</span>
+                    </div> -->
                   {/if}
                 </Column>
               </div>

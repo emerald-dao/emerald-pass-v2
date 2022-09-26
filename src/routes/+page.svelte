@@ -8,7 +8,7 @@
 <Benefits backgroundColor="green"/>
 <Faq/>
 <Buy4/>
-<Buy3/>
+<!-- <Buy3/> -->
 <Buy2/>
 <Buy/>
 

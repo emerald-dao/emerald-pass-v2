@@ -13,7 +13,12 @@
     <Container width="small">
       <Column>
         <!-- <h2>Get Your <br/><strong>Emerald Pass</strong><br/> Now</h2> -->
-        <h2>Option 3</h2>
+        <h2>Option 2</h2>
+        <ul style="margin-top: -3rem">
+          <li style="list-style: none;"><label><input type="checkbox" checked style="margin-right: 1rem;"><span>Gray ribbon</span></label></li>
+          <li style="list-style: none;"><label><input type="checkbox" style="margin-right: 1rem;"><span>Both cards with outline</span></label></li>
+          <li style="list-style: none;"><label><input type="checkbox" checked style="margin-right: 1rem;"><span>Glow Background</span></label></li>
+        </ul>
         {#if $user?.loggedIn}
           <div class="countdown-container">
             {#await timeOnEmeraldPass($user.addr) then endingTime}
@@ -38,12 +43,12 @@
                     {plan.description}
                   </p>
                   {#if plan.ribbon}
-                    <!-- <div class="ribbon ribbon-top-left">
-                      <span>{plan.ribbon}</span>
-                    </div> -->
-                    <div class="alert">
+                    <div class="ribbon ribbon-top-left">
                       <span>{plan.ribbon}</span>
                     </div>
+                    <!-- <div class="alert">
+                      <span>{plan.ribbon}</span>
+                    </div> -->
                   {/if}
                 </Column>
               </div>
@@ -103,6 +108,7 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+        box-shadow: 0 0 10px 0px var(--clr-background-primary-t5);
 
         h3 {
           font-family: var(--ff-text);
@@ -140,5 +146,9 @@
         border: 1px var(--clr-primary-main) solid;
       }
     }
+  }
+
+  .ribbon span {
+    background-color: #BBC6CE;
   }
 </style>

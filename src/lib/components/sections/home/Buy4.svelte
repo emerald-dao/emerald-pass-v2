@@ -14,6 +14,11 @@
       <Column>
         <!-- <h2>Get Your <br/><strong>Emerald Pass</strong><br/> Now</h2> -->
         <h2>Option 1</h2>
+        <ul style="margin-top: -3rem">
+          <li style="list-style: none;"><label><input type="checkbox" checked style="margin-right: 1rem;"><span>White ribbon</span></label></li>
+          <li style="list-style: none;"><label><input type="checkbox" checked style="margin-right: 1rem;"><span>Both cards with outline</span></label></li>
+          <li style="list-style: none;"><label><input type="checkbox" style="margin-right: 1rem;"><span>Glow Background</span></label></li>
+        </ul>
         {#if $user?.loggedIn}
           <div class="countdown-container">
             {#await timeOnEmeraldPass($user.addr) then endingTime}
