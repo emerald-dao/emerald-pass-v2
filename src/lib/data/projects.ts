@@ -41,11 +41,11 @@ const projects = [
 		slogan:
 			'A Discord bot that verifies NFT or any token holding on Flow and allows Discord community managers to award special Discord roles for doing so.',
 		url: 'https://bot.ecdao.org/',
-		logo: '/projects-logos/emerald-bot-logo.svg',
+		logo: '/projects-logos/emerald-bot-logo.png',
 		benefits: [
-			'Setup of custom token verifiers',
-			'Ability to use custom commands',
-			'Export user list from Discord'
+			'Setup a custom verifier for your Discord',
+			'Automatic role removal (in beta only for specific roles)',
+			'Export a list of user addresses + discord names who have a certain role'
 		]
 	},
 	{
