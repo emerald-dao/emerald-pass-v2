@@ -13,7 +13,7 @@
     <Container width="small">
       <Column>
         <!-- <h2>Get Your <br/><strong>Emerald Pass</strong><br/> Now</h2> -->
-        <h2>No Shadow</h2>
+        <h2>Option 2</h2>
         {#if $user?.loggedIn}
           <div class="countdown-container">
             {#await timeOnEmeraldPass($user.addr) then endingTime}
@@ -56,10 +56,10 @@
           {/each}
         </div>
       </Column>
-      <GradientWrapper>
-        <Gradient width="380px" height="650px" left="70%" top="60%" blur="200px"/>
-        <Gradient width="350px" height="650px" left="30%" top="62%" blur="200px"/>
-      </GradientWrapper>
+      <!-- <GradientWrapper>
+        <Gradient width="400px" height="500px" left="26%" top="46%" blur="150px"/>
+        <Gradient width="400px" height="500px" left="75%" top="60%" blur="150px"/>
+      </GradientWrapper> -->
     </Container>
   </Section>
 </div>
@@ -88,7 +88,7 @@
       }
 
       .buy-card {
-        background-color: var(--clr-background-primary);
+        background-color: var(--clr-background-secondary);
         border-radius: 2.3rem;
         padding-block: 4rem;
         padding-inline: 2rem;
@@ -120,8 +120,12 @@
       }
 
       .featured {
-        border: 2px var(--clr-primary-main) solid;
+        border: 1px var(--clr-primary-main) solid;
       }
     }
+  }
+
+  .ribbon span {
+    background-color: #BBC6CE;
   }
 </style>

@@ -13,7 +13,7 @@
     <Container width="small">
       <Column>
         <!-- <h2>Get Your <br/><strong>Emerald Pass</strong><br/> Now</h2> -->
-        <h2>Soft Lighter Shadow</h2>
+        <h2>Option 4</h2>
         {#if $user?.loggedIn}
           <div class="countdown-container">
             {#await timeOnEmeraldPass($user.addr) then endingTime}
@@ -50,7 +50,6 @@
                 <Button
                   prefetch={true}
                   size="full-width"
-                  type={plan.ribbon ? "generic" : "ghost"}
                   on:click={() => purchaseEmeraldPass(plan.subscriptionTime, plan.price)}
                 >
                   Buy Pass
@@ -60,8 +59,8 @@
         </div>
       </Column>
       <GradientWrapper>
-        <Gradient width="380px" height="650px" left="70%" top="60%" blur="200px"/>
-        <Gradient width="350px" height="650px" left="30%" top="62%" blur="200px"/>
+        <Gradient width="400px" height="500px" left="26%" top="46%" blur="150px"/>
+        <Gradient width="400px" height="500px" left="75%" top="60%" blur="150px"/>
       </GradientWrapper>
     </Container>
   </Section>
@@ -97,7 +96,7 @@
         padding-inline: 2rem;
         min-height: 1px;
         height: 100%;
-        box-shadow: 0 0 10px 0px var(--clr-neutral-400-t7);
+        box-shadow: 0 0 20px 0px var(--clr-neutral-400-t4);
         position: relative;
         display: flex;
         flex-direction: column;
@@ -137,7 +136,7 @@
       }
 
       .featured {
-        border: 2px var(--clr-primary-main) solid;
+        border: 1px var(--clr-primary-main) solid;
       }
     }
   }

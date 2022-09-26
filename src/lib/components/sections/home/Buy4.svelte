@@ -13,7 +13,7 @@
     <Container width="small">
       <Column>
         <!-- <h2>Get Your <br/><strong>Emerald Pass</strong><br/> Now</h2> -->
-        <h2>Card of different color</h2>
+        <h2>Option 1</h2>
         {#if $user?.loggedIn}
           <div class="countdown-container">
             {#await timeOnEmeraldPass($user.addr) then endingTime}
@@ -29,7 +29,7 @@
         {/if}
         <div class="cards-wrapper">
           {#each purchasePlans as plan}
-            <div class="buy-card" class:featured={plan.ribbon}>
+            <div class="buy-card featured">
               <div>
                 <h3>{plan.name}</h3>
                 <Column gap="none">
@@ -56,10 +56,10 @@
           {/each}
         </div>
       </Column>
-      <GradientWrapper>
+      <!-- <GradientWrapper>
         <Gradient width="380px" height="650px" left="70%" top="60%" blur="200px"/>
         <Gradient width="350px" height="650px" left="30%" top="62%" blur="200px"/>
-      </GradientWrapper>
+      </GradientWrapper> -->
     </Container>
   </Section>
 </div>
@@ -120,7 +120,7 @@
       }
 
       .featured {
-        border: 2px var(--clr-primary-main) solid;
+        border: 1px var(--clr-primary-main) solid;
       }
     }
   }

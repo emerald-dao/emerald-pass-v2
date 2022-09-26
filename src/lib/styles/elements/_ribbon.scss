@@ -11,14 +11,14 @@
 	z-index: -1;
 	content: '';
 	display: block;
-	border: 5px solid var(--clr-primary-main);
+	border: 5px solid var(--clr-neutral-700);
 }
 .ribbon span {
 	position: absolute;
 	display: block;
 	width: 225px;
 	padding: 15px 0;
-	background-color: var(--clr-primary-600);
+	background-color: var(--clr-neutral-900);
 	// box-shadow: 0 5px 10px var(--clr-background-primary);
 	color: var(--clr-font-text-inverse);
 	// text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);

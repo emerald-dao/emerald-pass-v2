@@ -7,10 +7,10 @@
 <!-- <Stats/> -->
 <Benefits backgroundColor="green"/>
 <Faq/>
-<Buy/>
-<Buy2/>
-<Buy3/>
 <Buy4/>
+<Buy3/>
+<Buy2/>
+<Buy/>
 
 <style type="scss">
   :root {

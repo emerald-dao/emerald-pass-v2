@@ -13,7 +13,7 @@
     <Container width="small">
       <Column>
         <!-- <h2>Get Your <br/><strong>Emerald Pass</strong><br/> Now</h2> -->
-        <h2>Soft Black Shadow / Thinner border</h2>
+        <h2>Option 3</h2>
         {#if $user?.loggedIn}
           <div class="countdown-container">
             {#await timeOnEmeraldPass($user.addr) then endingTime}
@@ -52,7 +52,7 @@
                   prefetch={true}
                   size="full-width"
                   on:click={() => purchaseEmeraldPass(plan.subscriptionTime, plan.price)}
-                  color={plan.ribbon ? "primary" : "neutral"}
+
                 >
                   Buy Pass
                 </Button>
@@ -61,8 +61,8 @@
         </div>
       </Column>
       <GradientWrapper>
-        <Gradient width="400px" height="500px" left="70%" top="60%" blur="150px"/>
-        <Gradient width="400px" height="500px" left="30%" top="62%" blur="150px"/>
+        <Gradient width="400px" height="500px" left="26%" top="46%" blur="150px"/>
+        <Gradient width="400px" height="500px" left="75%" top="60%" blur="150px"/>
       </GradientWrapper>
     </Container>
   </Section>
@@ -92,13 +92,12 @@
       }
 
       .buy-card {
-        background-color: var(--clr-background-primary);
+        background-color: var(--clr-background-secondary);
         border-radius: 2.3rem;
         padding-block: 4rem;
         padding-inline: 2rem;
         min-height: 1px;
         height: 100%;
-        box-shadow: 5px 5px 8px 0 var(--clr-background-secondary-t3);
         position: relative;
         display: flex;
         flex-direction: column;
