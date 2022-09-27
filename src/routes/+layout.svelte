@@ -10,7 +10,7 @@
 </script>
 
 <Header
-	themeStore={$theme}
+	themeStore={theme}
 	{logIn}
 	{unauthenticate}
 	{getFindProfile}

@@ -16,16 +16,22 @@
 					The single subscription pass which gives you access to premium features across the
 					numerous products and services offered by Emerald City.
 				</p>
-				<video width="480px" height="100%" autoplay loop muted>
-					<source src="emerald-pass.webm" type="video/webm" />
-					{#if $theme === 'light'}
+				{$theme}
+				{#if $theme === 'light'}
+					<video width="480px" height="100%" autoplay loop muted>
+						<source src="emerald-pass.webm" type="video/webm" />
 						<source src="emerald-pass-white.mp4" type="video/mp4" />
-					{:else}
+						<track kind="captions" />
+						Your browser does not support the video tag.
+					</video>
+				{:else}
+					<video width="480px" height="100%" autoplay loop muted>
+						<source src="emerald-pass.webm" type="video/webm" />
 						<source src="emerald-pass-black.mp4" type="video/mp4" />
-					{/if}
-					<track kind="captions" />
-					Your browser does not support the video tag.
-				</video>
+						<track kind="captions" />
+						Your browser does not support the video tag.
+					</video>
+				{/if}
 				<Button size="large" href="/#purchase">Purchase Now</Button>
 			</Column>
 			<!-- <GradientWrapper>
