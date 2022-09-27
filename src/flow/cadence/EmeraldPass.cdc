@@ -160,15 +160,11 @@ pub contract EmeraldPass {
       Type<@FUSD.Vault>(): Pricing({
         2629743.0: 100.0, // 1 month
         31556926.0: 1000.0 // 1 year
-      }),
-      Type<@FlowToken.Vault>(): Pricing({
-        2629743.0: 100.0, // 1 month
-        31556926.0: 1000.0 // 1 year
       })
     }
 
-    self.VaultPublicPath = /public/EmeraldPassv2
-    self.VaultStoragePath = /storage/EmeraldPassv2
+    self.VaultPublicPath = /public/EmeraldPass
+    self.VaultStoragePath = /storage/EmeraldPass
 
     self.account.save(<- create Admin(), to: /storage/EmeraldPassAdmin)
   }

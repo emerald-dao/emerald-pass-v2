@@ -20,7 +20,9 @@ h4 {
 	line-height: 1.1;
 	color: var(--clr-font-heading);
 	font-family: var(--ff-heading);
-	letter-spacing: -0.02em;
+	// letter-spacing: -0.02em;
+	font-display: uppercase;
+	text-transform: uppercase;
 }
 
 h1 {
@@ -41,7 +43,7 @@ h1,
 h2,
 .h2 {
 	--flow-spacer: 1.5em;
-	font-size: var(--fs-700);
+	font-size: var(--fs-600);
 }
 h3,
 .h3 {
@@ -78,4 +80,14 @@ p:not([class]),
 ul:not([class]),
 li:not([class]) {
 	max-width: 60ch;
+}
+
+.border-text {
+	-webkit-text-stroke: 2px var(--clr-font-text);
+	color: transparent;
+}
+
+.border-text-inverse {
+	-webkit-text-stroke: 2px var(--clr-font-text-inverse);
+	color: transparent;
 }

@@ -1,7 +1,8 @@
 const daoStats = [
 	{
-		title: 'FLOAT is growing',
-		description: '3.5m FLOATS minted from over 6000 events, utilized by nearly every community on Flow'
+		title: 'FLOAT is growinaaag',
+		description:
+			'3.5m FLOATS minted from over 6000 events, utilized by nearly every community on Flow'
 	},
 	{
 		title: '18,000 strong community ',

@@ -10,6 +10,7 @@
     left: 0;
     top: 0;
     z-index: -1;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
   }
 </style>

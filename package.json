@@ -38,7 +38,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@emerald-dao/component-library": "^1.7.0",
+		"@emerald-dao/component-library": "^1.8.2",
 		"@onflow/fcl": "^1.2.1"
 	}
 }

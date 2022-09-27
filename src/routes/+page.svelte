@@ -1,16 +1,16 @@
 <script type="ts">
-  import { Hero, Intro, Stats, Benefits, Faq, Buy} from '$lib/components/sections/home'
+	import { Hero, Intro, Stats, Benefits, Faq, Buy } from '$lib/components/sections/home';
 </script>
 
-<Hero/>
-<Intro/>
-<Stats/>
-<Benefits/>
-<Faq/>
-<Buy/>
+<Hero />
+<Intro />
+<!-- <Stats/> -->
+<Benefits />
+<Faq />
+<Buy />
 
 <style type="scss">
-  :root {
-    --bones-section-padding-m: 8rem;
-  }
+	:root {
+		--bones-section-padding-m: 8rem;
+	}
 </style>

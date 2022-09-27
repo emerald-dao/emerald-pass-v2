@@ -2,36 +2,36 @@
   import { Section, Container, Column, Row } from "@mateoroldos/svelte.bones";
   import projects from "$lib/data/projects";
 	import { Grid1 } from "$lib/components/layouts";
+  import Icon from "@iconify/svelte"
 </script>
 
-
-<div style="background-color: var(--clr-primary-main)">
+<div style="background-color: var(--clr-primary-main)" id="benefits">
   <Section paddingTop="large" paddingBottom="large">
     <Container>
       <Grid1>
         <div class="sticky" slot="left">
           <Column gap={2} justify="flex-start">
-            <h2 style="color: var(--clr-font-heading-inverse)">Get exclusive access to our benefits</h2>
+            <h2 style="color: var(--clr-font-heading-inverse)"><span class="border-text-inverse">Get access to</span> exclusive benefits</h2>
             <p style="color: var(--clr-font-text-inverse)">
-              As an Emerald Pass subscriber, you will be able to get premium features and abilities on all of our products, including some educational material.
+              Emerald Pass subscribers enjoy exclusive benefits across all of our products & services - including upcoming paid education offerings
             </p>
           </Column>
         </div>
         <div slot="right">        
           <Column>
             {#each projects as project}
-            <div class="card">
-              <Row gap={1.5}>
-                <img src={project.logo} alt={`${project.name} logo`}>
-                <h3>{project.name}</h3>
-              </Row>
-              <span>{project.slogan}</span>
-              <ul>
-                {#each project.benefits as benefit}
-                  <li>{benefit}</li>
-                {/each}
-              </ul>
-            </div>
+              <div class="card">
+                <Row gap={1} align="center">
+                  <img src={project.logo} alt={`${project.name} logo`}>
+                  <h3>{project.name}</h3>
+                </Row>
+                <span>{project.slogan}</span>
+                <ul>
+                  {#each project.benefits as benefit}
+                    <li><Icon icon="ion:checkmark-circle" color="var(--clr-primary-main)" width="1.6rem"/> {benefit}</li>
+                  {/each}
+                </ul>
+              </div>
             {/each}
           </Column>
         </div>
@@ -41,21 +41,40 @@
 </div>
 
 <style type="scss">
+  @use "../../../styles/utils" as *;
+
   .card {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 2.2rem;
+    gap: 1.8rem;
     background-color: var(--clr-background-primary);
     border-radius: 1rem;
-    padding: 3rem;
+    padding: 4rem;
     width: 100%;
+    font-size: 1.12rem;
+
+    h3 {
+      font-size: var(--fs-500);
+    }
 
     ul {
-      font-size: var(--fs-300);
       display: flex;
       flex-direction: column;
-      gap: 0.8rem;
+      gap: 1.4rem;
+      padding-left: 0;
+
+      @include mq(small) {
+        padding-left: 2rem;
+      }
+
+      li {
+        list-style: none;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        place-items: center start;
+        gap: 0.8rem;
+      }
     }
 
     img {

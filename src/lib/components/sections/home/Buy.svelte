@@ -1,94 +1,120 @@
 <script type="ts">
-  import { Section, Container, Column, Row } from "@mateoroldos/svelte.bones";
-	import { Button } from "@emerald-dao/component-library";
-  import purchasePlans from "$lib/config/purchase";
-  import { purchaseEmeraldPass, timeOnEmeraldPass } from "$flow/actions.js";
-  import Countdown from "$components/utility/Countdown.svelte";
-  import { user } from "$stores/FlowStore"
+	import { Section, Container, Column, Row } from '@mateoroldos/svelte.bones';
+	import { Button } from '@emerald-dao/component-library';
+	import purchasePlans from '$lib/config/purchase';
+	import { purchaseEmeraldPass, timeOnEmeraldPass } from '$flow/actions.js';
+	import Countdown from '$components/utility/Countdown.svelte';
+	import { user } from '$stores/FlowStore';
 </script>
 
 <div id="purchase" class="section-wrapper">
-  <Section paddingTop="large" paddingBottom="large">
-    <Container width="small">
-      <Column>
-        <h2>Get Your Pass Now</h2>
-        {#if $user?.loggedIn}
-          <div class="countdown-container">
-            {#await timeOnEmeraldPass($user.addr) then endingTime}
-              <p>You have</p>
-              {#if !endingTime || endingTime <= Date.now() / 1000}
-                <h3>00:00:00</h3>
-              {:else}
-                <h3><Countdown unix={endingTime} /></h3>
-              {/if}
-              <p>left on your subscription.</p>
-            {/await}
-          </div>
-        {/if}
-        <div class="cards-wrapper">
-          {#each purchasePlans as plan}
-            <div class="buy-card">
-              <Column gap="small">
-                <h3>{plan.name}</h3>
-                <span>{`${Number(plan.price).toFixed(0)} $FUSD`}</span>
-                <p>
-                  {plan.description}
-                </p>
-                <Button
-                  prefetch={true}
-                  color="neutral"
-                  size="full-width"
-                  --clr-neutral-800=var(--clr-neutral-100)
-                  --clr-font-text-inverse=var(--clr-font-text)
-                  on:click={() => purchaseEmeraldPass(plan.subscriptionTime, plan.price)}
-                >
-                  Buy Pass
-                </Button>
-              </Column>
-            </div>
-          {/each}
-        </div>
-      </Column>
-    </Container>
-  </Section>
+	<Section paddingTop="large" paddingBottom="large">
+		<Container width="small">
+			<Column>
+				<h2>Get Your <br /><strong>Emerald Pass</strong><br /> Now</h2>
+				{#if $user?.loggedIn}
+					<div class="countdown-container">
+						{#await timeOnEmeraldPass($user.addr) then endingTime}
+							<p>You have</p>
+							{#if !endingTime || endingTime <= Date.now() / 1000}
+								<h3>00:00:00</h3>
+							{:else}
+								<h3><Countdown unix={endingTime} /></h3>
+							{/if}
+							<p>left on your subscription.</p>
+						{/await}
+					</div>
+				{/if}
+				<div class="cards-wrapper">
+					{#each purchasePlans as plan}
+						<div class="buy-card featured">
+							<div>
+								<h3>{plan.name}</h3>
+								<Column gap="none">
+									<span class="price">{`${Number(plan.price).toFixed(0)} $FUSD`}</span>
+									<p>
+										{plan.description}
+									</p>
+									{#if plan.ribbon}
+										<div class="ribbon ribbon-top-left">
+											<span>{plan.ribbon}</span>
+										</div>
+									{/if}
+								</Column>
+							</div>
+							<Button
+								prefetch={true}
+								size="full-width"
+								on:click={() => purchaseEmeraldPass(plan.subscriptionTime, plan.price)}
+							>
+								Buy Pass
+							</Button>
+						</div>
+					{/each}
+				</div>
+			</Column>
+		</Container>
+	</Section>
 </div>
 
 <style type="scss">
-  @use "../../../styles/utils" as *;
+	@use '../../../styles/utils' as *;
 
-  .section-wrapper {
-    border-top: 2px var(--clr-primary-main-t7) solid;
+	.section-wrapper {
+		position: relative;
+		border-top: 2px var(--clr-primary-main-t7) solid;
+		text-align: center;
 
-    .countdown-container {
-      text-align: center;
-    }
+		.countdown-container {
+			text-align: center;
+		}
 
-    .cards-wrapper {
-      display: flex;
-      flex-direction: column;
-      gap: 4rem;
-      text-align: center;
+		.cards-wrapper {
+			display: flex;
+			flex-direction: column;
+			gap: 4rem;
+			text-align: center;
 
-      @include mq(medium) {
-        flex-direction: row;
-      }
+			@include mq(medium) {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+			}
 
-      .buy-card {
-        background-color: var(--clr-primary-main);
-        color: var(--clr-font-text-inverse);
-        border-radius: 2.3rem;
-        padding: 4rem;
-        box-shadow: 0 0 40px 0 var(--clr-neutral-100);
-        height: 100%;
+			.buy-card {
+				background-color: var(--clr-background-secondary);
+				border-radius: 2.3rem;
+				padding-block: 4rem;
+				padding-inline: 2rem;
+				min-height: 1px;
+				height: 100%;
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				align-items: center;
 
-        h3 {
-          color: var(--clr-font-heading-inverse);
-        }
+				h3 {
+					font-family: var(--ff-text);
+					text-transform: none;
+					margin-bottom: 1rem;
+				}
 
-        span {
-          font-family: var(--ff-mono);
-        }
-      }
-    }
-  }
+				.price {
+					border-bottom: 1.6px var(--clr-font-text-t8) solid;
+					padding-bottom: 1.6rem;
+					width: 70%;
+				}
+
+				p {
+					font-size: var(--fs-300);
+					margin-top: 2rem;
+					margin-bottom: 4.4rem;
+				}
+			}
+
+			.featured {
+				border: 1px var(--clr-primary-main) solid;
+			}
+		}
+	}
 </style>
