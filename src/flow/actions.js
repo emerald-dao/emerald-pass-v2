@@ -18,6 +18,7 @@ import {
 // Scripts
 import hasEmeraldPassScript from './cadence/scripts/has_emerald_pass.cdc?raw';
 import timeOnEmeraldPassScript from './cadence/scripts/time_on_pass.cdc?raw';
+import checkSetupScript from './cadence/scripts/check_setup.cdc?raw';
 // Transactions
 import purchaseEmeraldPassTx from './cadence/transactions/purchase_emerald_pass.cdc?raw';
 import setupEmeraldPassTx from './cadence/transactions/setup_emerald_pass.cdc?raw';
@@ -156,6 +157,19 @@ export async function timeOnEmeraldPass(user) {
 
 		console.log('Unix time left: ' + response);
 		console.log('Unix time now: ' + Date.now() / 1000);
+		return response;
+	} catch (e) {
+		console.log(e);
+	}
+}
+
+export async function checkSetup(user) {
+	try {
+		const response = await fcl.query({
+			cadence: replaceWithProperValues(checkSetupScript),
+			args: (arg, t) => [arg(user, t.Address)]
+		});
+
 		return response;
 	} catch (e) {
 		console.log(e);

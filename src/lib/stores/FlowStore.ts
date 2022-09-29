@@ -49,7 +49,7 @@ const contractData = {
 	}
 };
 
-export const user = writable(null);
+export const user = writable({ loggedIn: false });
 export const network = writable('mainnet');
 export const profile = writable(null);
 export const transactionStatus = writable({});
