@@ -33,7 +33,7 @@ const projects = [
 			'Your own custom URL',
 			'1-click catalog creation',
 			'Airdrop functionality',
-			'Advanced NFT sales statistics'
+			'Download list of buyers (address + discord name)'
 		]
 	},
 	{
