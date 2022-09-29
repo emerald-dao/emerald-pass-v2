@@ -56,11 +56,5 @@
 			"key": "fc49a771829ff480841164af13b18a68cd697b6e79c80af7f8470a9e651dfac5"
 		}
 	},
-	"deployments": {
-		"mainnet": {
-			"mainnet-account": [
-				"EmeraldPass"
-			]
-		}
-	}
+	"deployments": {}
 }

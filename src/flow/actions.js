@@ -20,6 +20,7 @@ import hasEmeraldPassScript from './cadence/scripts/has_emerald_pass.cdc?raw';
 import timeOnEmeraldPassScript from './cadence/scripts/time_on_pass.cdc?raw';
 // Transactions
 import purchaseEmeraldPassTx from './cadence/transactions/purchase_emerald_pass.cdc?raw';
+import setupEmeraldPassTx from './cadence/transactions/setup_emerald_pass.cdc?raw';
 
 if (browser) {
 	// set Svelte $user store to currentUser,
@@ -85,6 +86,33 @@ export const purchaseEmeraldPass = async (amount) => {
 		const transactionId = await fcl.mutate({
 			cadence: replaceWithProperValues(purchaseEmeraldPassTx),
 			args: (arg, t) => [arg(amount, t.UFix64)],
+			payer: fcl.authz,
+			proposer: fcl.authz,
+			authorizations: [fcl.authz],
+			limit: 999
+		});
+		console.log({ transactionId });
+		fcl.tx(transactionId).subscribe((res) => {
+			transactionStatus.set(res);
+			console.log(res);
+			if (res.status === 4) {
+				setTimeout(() => transactionInProgress.set(false), 2000);
+			}
+		});
+	} catch (e) {
+		console.log(e);
+		transactionInProgress.set(false);
+		transactionStatus.set({});
+	}
+};
+
+export const setupEmeraldPass = async () => {
+	initTransactionState();
+
+	try {
+		const transactionId = await fcl.mutate({
+			cadence: replaceWithProperValues(setupEmeraldPassTx),
+			args: (arg, t) => [],
 			payer: fcl.authz,
 			proposer: fcl.authz,
 			authorizations: [fcl.authz],
