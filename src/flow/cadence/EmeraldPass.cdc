@@ -2,11 +2,16 @@ import FungibleToken from "./utility/FungibleToken.cdc"
 import FUSD from "./utility/FUSD.cdc"
 import FlowToken from "./utility/FlowToken.cdc"
 
+// The official Emerald Pass contract. Access premium features across Emerald City tools and education by having an active subscription.
+// Purchase or learn more about Emerald Pass: https://pass.ecdao.org/
+// Created by Emerald City
+
 pub contract EmeraldPass {
 
   access(self) var treasury: ECTreasury
   // Maps the type of a token to its pricing
   access(self) var pricing: {Type: Pricing}
+  pub var purchased: UInt64
 
   pub let VaultPublicPath: PublicPath
   pub let VaultStoragePath: StoragePath
@@ -61,8 +66,11 @@ pub contract EmeraldPass {
       let paymentType: Type = payment.getType()
       let pricing: Pricing = EmeraldPass.getPricing(vaultType: paymentType) ?? panic("This is not a supported form of payment.")
       let time: UFix64 = pricing.getTime(cost: payment.balance) ?? panic("The balance of the Vault you sent in does not correlate to any supported amounts of time.")
+      
       EmeraldPass.depositToECTreasury(vault: <- payment)
       self.addTime(time: time)
+
+      EmeraldPass.purchased = EmeraldPass.purchased + 1
       emit Purchased(subscriber: self.owner!.address, time: time, vaultType: paymentType)
     }
 
@@ -152,6 +160,7 @@ pub contract EmeraldPass {
         1000.0: 31556926.0 // 1 year
       })
     }
+    self.purchased = 0
 
     self.VaultPublicPath = /public/EmeraldPass
     self.VaultStoragePath = /storage/EmeraldPass
