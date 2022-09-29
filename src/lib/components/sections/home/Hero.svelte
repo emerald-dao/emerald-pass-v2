@@ -16,7 +16,6 @@
 					The single subscription pass which gives you access to premium features across the
 					numerous products and services offered by Emerald City.
 				</p>
-				{$theme}
 				{#if $theme === 'light'}
 					<video width="480px" height="100%" autoplay loop muted>
 						<source src="emerald-pass.webm" type="video/webm" />
