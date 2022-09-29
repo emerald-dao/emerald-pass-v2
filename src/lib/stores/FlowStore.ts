@@ -27,14 +27,6 @@ const contractData = {
 		testnet: '0x6c0d53c676256e8c',
 		mainnet: '0x5643fd47a29770e7'
 	},
-	MintVerifiers: {
-		testnet: '0x73a19dd056affc4d',
-		mainnet: ''
-	},
-	TouchstoneContracts: {
-		testnet: '0xd24f69d0e1865520',
-		mainnet: ''
-	},
 	FLOAT: {
 		testnet: '0x0afe396ebc8eee65',
 		mainnet: '0x2d4c3caffbeab845'
@@ -58,7 +50,7 @@ const contractData = {
 };
 
 export const user = writable(null);
-export const network = writable('testnet');
+export const network = writable('mainnet');
 export const profile = writable(null);
 export const transactionStatus = writable({});
 export const transactionInProgress = writable(false);
@@ -70,11 +62,9 @@ export const addresses = derived([network], ([$network]) => {
 		FUSD: contractData.FUSD[$network],
 		FlowToken: contractData.FlowToken[$network],
 		ECTreasury: contractData.ECTreasury[$network],
-		MintVerifiers: contractData.MintVerifiers[$network],
 		FLOAT: contractData.FLOAT[$network],
 		FIND: contractData.FIND[$network],
 		FN: contractData.FN[$network],
-		TouchstoneContracts: contractData.TouchstoneContracts[$network],
 		EmeraldPass: contractData.EmeraldPass[$network],
 		NFTCatalog: contractData.NFTCatalog[$network]
 	};

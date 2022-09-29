@@ -52,17 +52,6 @@ function switchNetwork(newNetwork) {
 	saveFileInStore(network, newNetwork);
 }
 
-export const deployToTestnet = async () => {
-	// unauthenticate();
-	switchNetwork('testnet');
-	deployContract();
-};
-
-export const deployToMainnet = async () => {
-	switchNetwork('mainnet');
-	deployContract();
-};
-
 function initTransactionState() {
 	transactionInProgress.set(true);
 	transactionStatus.set({ status: -1 });
@@ -81,9 +70,6 @@ export function replaceWithProperValues(script, contractName = '', contractAddre
 		.replace('"./utility/MetadataViews.cdc"', addressList.MetadataViews)
 		.replace('"./utility/FungibleToken.cdc"', addressList.FungibleToken)
 		.replace('"./utility/FlowToken.cdc"', addressList.FlowToken)
-		.replace('"./MintVerifiers.cdc"', addressList.MintVerifiers)
-		.replace('"../MintVerifiers.cdc"', addressList.MintVerifiers)
-		.replace('"../TouchstoneContracts.cdc"', addressList.TouchstoneContracts)
 		.replace('"../utility/FLOAT.cdc"', addressList.FLOAT)
 		.replace('"../EmeraldPass.cdc"', addressList.EmeraldPass)
 		.replace('"../utility/NFTCatalog.cdc"', addressList.NFTCatalog)
