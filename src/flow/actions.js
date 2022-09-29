@@ -92,13 +92,13 @@ export function replaceWithProperValues(script, contractName = '', contractAddre
 }
 
 // ****** Transactions ****** //
-export const purchaseEmeraldPass = async (time, amount) => {
+export const purchaseEmeraldPass = async (amount) => {
 	initTransactionState();
 
 	try {
 		const transactionId = await fcl.mutate({
 			cadence: replaceWithProperValues(purchaseEmeraldPassTx),
-			args: (arg, t) => [arg(time, t.UFix64), arg(amount, t.UFix64)],
+			args: (arg, t) => [arg(amount, t.UFix64)],
 			payer: fcl.authz,
 			proposer: fcl.authz,
 			authorizations: [fcl.authz],

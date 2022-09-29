@@ -45,7 +45,7 @@
 							<Button
 								prefetch={true}
 								size="full-width"
-								on:click={() => purchaseEmeraldPass(plan.subscriptionTime, plan.price)}
+								on:click={() => purchaseEmeraldPass(plan.price)}
 							>
 								Buy Pass
 							</Button>
