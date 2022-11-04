@@ -47,14 +47,6 @@ const projects = [
 			'Automatic role removal (in beta only for specific roles)',
 			'Export a list of user addresses + discord names who have a certain role'
 		]
-	},
-	{
-		name: 'Geeft',
-		slogan:
-			'Our fun NFT and Token gifting platform that allows you to send Flow-based tokens to anyone in a few clicks!',
-		url: 'https://geeft.ecdao.org/',
-		logo: '/projects-logos/geeft-logo.svg',
-		benefits: ['Add your own custom NFT collections or Tokens for gifting']
 	}
 ];
 
